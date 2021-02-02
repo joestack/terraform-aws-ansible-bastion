@@ -8,7 +8,7 @@
 ##
 data "template_file" "ansible_web_hosts" {
   count      = var.web_node_count
-  template   = file("${path.root}/templates/ansible_hosts.tpl")
+  template   = file("${path.module}/templates/ansible_hosts.tpl")
   depends_on = [aws_instance.web_nodes]
 
   vars = {
